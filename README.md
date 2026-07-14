@@ -50,23 +50,23 @@ The following screenshots showcase different sections of the portfolio.
 
 ## 🏠 Home
 
-![Home](/screenshots/home.png)
+![Home](screenshots/home.png)
 
 ## 👨‍💻 About
 
-![About](/screenshots/about.png)
+![About](screenshots/about.png)
 
 ## 🛠 Skills
 
-![Skills](/screenshots/skills.png)
+![Skills](screenshots/skills.png)
 
 ## 💼 Projects
 
-![Projects](/screenshots/projects.png)
+![Projects](screenshots/projects.png)
 
 ## 📬 Contact
 
-![Contact](/screenshots/contact.png)
+![Contact](screenshots/contact.png)
 
 ---
 
