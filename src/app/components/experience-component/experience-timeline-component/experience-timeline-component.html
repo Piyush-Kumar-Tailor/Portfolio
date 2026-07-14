@@ -1,0 +1,21 @@
+ <!-- EXPERIENCE TIMELINE -->
+
+<div class="relative mx-auto max-w-5xl">
+
+  <!-- Timeline Line -->
+
+  <div
+    class="absolute left-6 top-0 hidden h-full w-1 rounded-full bg-linear-to-b from-cyan-500 via-blue-500 to-purple-500 md:block">
+  </div>
+
+  <!-- Experience Cards -->
+
+  @for(experience of experiences; track experience.company){
+
+    <app-experience-card
+      [experience]="experience">
+    </app-experience-card>
+
+  }
+
+</div>

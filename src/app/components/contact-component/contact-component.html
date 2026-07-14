@@ -1,0 +1,345 @@
+<!-- CONTACT SECTION -->
+
+<section id="contact" class="bg-slate-900 py-24">
+
+    <div class="mx-auto max-w-7xl px-6">
+
+        <!-- Heading -->
+
+        <div class="mb-20 text-center">
+
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+
+                Contact
+
+            </p>
+
+            <h2 class="text-5xl font-bold text-white">
+
+                Let's
+
+                <span class="bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+
+                    Connect
+
+                </span>
+
+            </h2>
+
+            <p class="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-400">
+
+                I'm currently looking for internship and full-time opportunities.
+                Feel free to contact me regarding projects, collaborations,
+                internships or software development roles.
+
+            </p>
+
+        </div>
+
+        <div class="grid gap-12 lg:grid-cols-2">
+
+            <!-- =========================================
+           LEFT
+      ========================================== -->
+
+            <div>
+
+                <h3 class="mb-10 text-3xl font-bold text-white">
+
+                    Get In Touch
+
+                </h3>
+
+                <div class="space-y-6">
+
+                    <!-- Email -->
+
+                    <div
+                        class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-blue-500">
+
+                        <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-blue-600">
+
+                            <i class="fa-solid fa-envelope text-2xl text-white">
+
+                            </i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-slate-400">
+
+                                Gmail
+
+                            </p>
+
+                            <a href="mailto:piyushkumar89b2@gmail.com"
+                                class="text-lg font-semibold text-white hover:text-blue-400">
+
+                                piyushkumar89b2@gmail.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Phone -->
+
+                    <div
+                        class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-green-500">
+
+                        <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-green-600">
+
+                            <i class="fa-solid fa-phone text-2xl text-white">
+
+                            </i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-slate-400">
+
+                                Phone
+
+                            </p>
+
+                            <a href="tel:+916375589241" class="text-lg font-semibold text-white hover:text-green-400">
+
+                                +91 6375589241
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Location -->
+
+                    <div
+                        class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-red-500">
+
+                        <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-red-600">
+
+                            <i class="fa-solid fa-location-dot text-2xl text-white">
+
+                            </i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-slate-400">
+
+                                Location
+
+                            </p>
+
+                            <p class="text-lg font-semibold text-white">
+
+                                Sikar, Rajasthan, India
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Social Links -->
+
+                <div class="mt-10">
+
+                    <h4 class="mb-6 text-xl font-semibold text-white">
+
+                        Follow Me
+
+                    </h4>
+
+                    <div class="flex gap-5">
+
+                        <a href="https://github.com/Piyush-Kumar-Tailor" target="_blank"
+                            class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 transition hover:bg-blue-600">
+
+                            <i class="fab fa-github text-xl text-white">
+
+                            </i>
+
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/piyush-kumar-tailor/" target="_blank"
+                            class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 transition hover:bg-blue-600">
+
+                            <i class="fab fa-linkedin text-xl text-white">
+
+                            </i>
+
+                        </a>
+
+                        <a href="mailto:piyushkumar89b2@gmail.com"
+                            class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 transition hover:bg-blue-600">
+
+                            <i class="fa-solid fa-envelope text-xl text-white">
+
+                            </i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="rounded-3xl border border-slate-800 bg-slate-950/80 backdrop-blur-xl p-10 shadow-2xl">
+
+                @if(successMessage()){
+
+                <div class="mb-6 rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-green-400">
+
+                    {{ successMessage() }}
+
+                </div>
+
+                }
+
+                @if(errorMessage()){
+
+                <div class="mb-6 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
+
+                    {{ errorMessage() }}
+
+                </div>
+
+                }
+                <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="space-y-6">
+
+                    <div>
+
+                        <label class="mb-2 block text-slate-300">
+
+                            Full Name
+
+                        </label>
+
+                        <div class="relative">
+
+                            <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+
+                            <input type="text" formControlName="name" placeholder="Enter your full name"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-900 py-4 pl-12 pr-5 text-white focus:border-blue-500 outline-none">
+
+                        </div>
+
+                        @if(contactForm.get('name')?.invalid &&
+                        contactForm.get('name')?.touched){
+
+                        <p class="mt-2 text-sm text-red-400">
+                            Name is required.
+                        </p>
+
+                        }
+
+                    </div>
+
+                    <div>
+
+                        <label class="mb-2 block text-slate-300">
+
+                            Email
+
+                        </label>
+
+                        <div class="relative">
+
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                            </i>
+
+                            <input type="email" formControlName="email" placeholder="Enter your email"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-900 py-4 pl-12 pr-5 text-white outline-none transition focus:border-blue-500">
+
+                        </div>
+                        @if(contactForm.get('email')?.invalid &&
+                        contactForm.get('email')?.touched){
+
+                        <p class="mt-2 text-sm text-red-400">
+
+                            Please enter a valid email address.
+
+                        </p>
+
+                        }
+
+                    </div>
+
+                    <div>
+
+                        <label class="mb-2 block text-slate-300">
+
+                            Subject
+
+                        </label>
+
+                        <div class="relative">
+
+                            <i class="fa-solid fa-tag absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                            </i>
+
+                            <input type="text" formControlName="subject" placeholder="Subject"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-900 py-4 pl-12 pr-5 text-white outline-none transition focus:border-blue-500">
+
+                        </div>
+
+
+                    </div>
+
+                    <div>
+
+                        <label class="mb-2 block text-slate-300">
+
+                            Message
+
+                        </label>
+
+                        <div class="relative">
+
+                            <i class="fa-solid fa-comment absolute left-4 top-6 text-slate-500">
+                            </i>
+
+                            <textarea rows="6" formControlName="message" placeholder="Write your message..."
+                                class="w-full rounded-xl border border-slate-700 bg-slate-900 py-4 pl-12 pr-5 text-white outline-none transition focus:border-blue-500">
+    </textarea>
+
+                        </div>
+
+
+                    </div>
+
+                    <button type="submit" [disabled]="contactForm.invalid || isSending()"
+                        class="flex w-full items-center justify-center gap-3 rounded-xl bg-blue-600 py-4 text-lg font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">
+
+                        @if(isSending()) {
+
+                        <span>Sending...</span>
+
+                        } @else {
+
+                        <span>Send Message</span>
+
+                        }
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

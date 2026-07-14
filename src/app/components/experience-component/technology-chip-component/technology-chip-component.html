@@ -1,0 +1,18 @@
+<span
+    class="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:bg-cyan-500/10 hover:text-cyan-400">
+
+    <i class="fa-solid fa-code text-xs text-cyan-400 transition group-hover:rotate-12">
+    </i>
+
+    <span
+        class="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-300 hover:border-cyan-500 hover:bg-cyan-500/10">
+
+        <i [class]="technology().icon" [ngClass]="technology().color">
+
+        </i>
+
+        {{ technology().name }}
+
+    </span>
+
+</span>
