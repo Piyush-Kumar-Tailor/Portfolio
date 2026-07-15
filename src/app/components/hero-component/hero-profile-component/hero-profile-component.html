@@ -1,0 +1,125 @@
+<div class="order-1 flex justify-center lg:order-2">
+
+    <div
+        class="relative rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl sm:p-6 lg:p-8">
+
+        <!-- Background Glow -->
+
+        <div
+            class="absolute inset-0 rounded-3xl bg-linear-to-r from-blue-500/10 via-cyan-500/10 to-purple-500/10 blur-3xl">
+        </div>
+
+        <!-- Profile -->
+
+        <div
+            class="relative">
+
+            <!-- Outer Glow -->
+
+            <div
+                class="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl">
+            </div>
+
+            <!-- Gradient Ring -->
+
+            <div
+                class="rounded-full bg-linear-to-r from-blue-500 via-cyan-400 to-purple-500 p-1">
+
+                <img
+                    [src]="profileImage"
+                    alt="Piyush Kumar Tailor"
+                    class="h-72 w-72 rounded-full bg-slate-950 object-cover object-[50%_24%] shadow-2xl transition duration-500 hover:scale-105 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+
+            </div>
+
+        </div>
+
+        <!-- Floating Technologies -->
+
+        @for(tech of technologies; track tech.name){
+
+        <div
+            class="absolute hidden rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-2xl transition duration-300 hover:scale-110 md:flex md:items-center md:gap-2"
+            [class]="tech.bg + ' ' + tech.position">
+
+            <span class="text-lg">
+
+                {{ tech.icon }}
+
+            </span>
+
+            <span>
+
+                {{ tech.name }}
+
+            </span>
+
+        </div>
+
+        }
+
+        <!-- Bottom Glass Card -->
+
+        <div
+            class="absolute -bottom-8 left-1/2 hidden w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-slate-900/80 p-5 backdrop-blur-xl shadow-2xl lg:block">
+
+            <div
+                class="flex items-center justify-between">
+
+                <div>
+
+                    <p
+                        class="text-sm text-slate-400">
+
+                        Current Role
+
+                    </p>
+
+                    <h3
+                        class="mt-1 font-semibold text-white">
+
+                        Java Full Stack Developer
+
+                    </h3>
+
+                </div>
+
+                <div
+                    class="h-4 w-4 rounded-full bg-green-500 animate-pulse">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Tech Stack -->
+
+        <div
+            class="mt-8 grid grid-cols-2 gap-3 md:hidden">
+
+            @for(tech of technologies; track tech.name){
+
+            <div
+                class="flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-medium text-white">
+
+                <span>
+
+                    {{ tech.icon }}
+
+                </span>
+
+                <span>
+
+                    {{ tech.name }}
+
+                </span>
+
+            </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>

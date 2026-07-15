@@ -5,9 +5,7 @@
 
 @import "tailwindcss";
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
+/*   SCROLLBAR
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -34,10 +32,10 @@
   );
 }
 
-/* Firefox */
+//Firefox 
 
 * {
   scrollbar-width: thin;
   scrollbar-color: #3b82f6 #020617;
 }
-
+ */

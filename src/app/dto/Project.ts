@@ -28,7 +28,7 @@ export const ALLPROJECT: Project[] = [
 
         video: '/videos/EMS.mp4',
 
-        github: 'https://github.com/Piyush-Kumar-Tailor/employee-management-system',
+        github: 'https://github.com/Piyush-Kumar-Tailor/EMPLOYEE-MANAGEMENT-SYSTEM',
 
         demo: '',
 
@@ -62,7 +62,7 @@ export const ALLPROJECT: Project[] = [
 
         video: '/videos/SSHA.mp4',
 
-        github: '',
+        github: 'https://github.com/Piyush-Kumar-Tailor/Smart-Surveillance---Human-Analytics',
 
         demo: '',
 
@@ -87,36 +87,6 @@ export const ALLPROJECT: Project[] = [
     },
 
     {
-        title: 'Spam Email Detection System',
-
-        description:
-            'A machine learning application that classifies emails as Spam or Ham using Natural Language Processing, TF-IDF vectorization, and the Naive Bayes algorithm.',
-
-        video: '/videos/SHED.mp4',
-
-        github: '',
-
-        demo: '',
-
-        status: 'Completed',
-
-        techStack: [
-            'Python',
-            'Scikit-Learn',
-            'NLP',
-            'TF-IDF'
-        ],
-
-        features: [
-            'Spam Classification',
-            'Natural Language Processing',
-            'TF-IDF Vectorization',
-            'Naive Bayes Model',
-            'Email Prediction'
-        ]
-    },
-
-    {
         title: 'Candidate Management System',
 
         description:
@@ -124,7 +94,7 @@ export const ALLPROJECT: Project[] = [
 
         video: '/videos/CMS.mp4',
 
-        github: '',
+        github: 'https://github.com/Piyush-Kumar-Tailor/JDBC-Candidate-Management-System',
 
         demo: '',
 
@@ -153,9 +123,9 @@ export const ALLPROJECT: Project[] = [
 
         video: '/videos/Spotify.mp4',
 
-        github: '',
+        github: 'https://github.com/Piyush-Kumar-Tailor/Spotify-Clone',
 
-        demo: '',
+        demo: 'https://projectclonespotifybypk.netlify.app/',
 
         status: 'Completed',
 
@@ -173,6 +143,76 @@ export const ALLPROJECT: Project[] = [
             'Music Progress Bar',
             'Responsive User Interface',
             'Modern Spotify-inspired Design'
+        ]
+    },
+
+    {
+        title: 'Task Management System',
+
+        description:
+            'A modern task management application built with Angular that enables users to efficiently organize, track, and manage daily tasks. The application leverages Angular Signals for reactive state management and Browser Local Storage for persistent data, providing a fast and seamless user experience without requiring a backend.',
+
+        video: '/videos/TMS.mp4',
+
+        github: 'https://github.com/Piyush-Kumar-Tailor/Task-Management-System-Angular',
+
+        demo: 'https://task-management-system-angular.vercel.app/',
+
+        status: 'Completed',
+
+        techStack: [
+            'Angular',
+            'TypeScript',
+            'Angular Signals',
+            'HTML5',
+            'Tailwind CSS',
+            'Browser Local Storage'
+        ],
+
+        features: [
+            'Create, Update & Delete Tasks',
+            'Persistent Storage using Local Storage',
+            'Reactive State Management with Angular Signals',
+            'Task Completion Status',
+            'Responsive User Interface',
+            'Standalone Component Architecture',
+            'Real-time UI Updates',
+            'Clean & Modern Dashboard'
+        ]
+    },
+
+    {
+        title: 'Investment Calculator',
+
+        description:
+            'A responsive Investment Calculator built with Angular that helps users estimate the future value of their investments based on initial investment, annual contributions, expected return rate, and investment duration. The application leverages Angular Signals for reactive state management, built-in Pipes for currency formatting, and real-time financial calculations to deliver an intuitive user experience.',
+
+        video: '/videos/IC.mp4',
+
+        github: 'https://github.com/Piyush-Kumar-Tailor/Investment-Calculator',
+
+        demo: 'https://investment-calculator-indol-two.vercel.app/',
+
+        status: 'Completed',
+
+        techStack: [
+            'Angular',
+            'TypeScript',
+            'Angular Signals',
+            'HTML5',
+            'Tailwind CSS',
+            'Angular Pipes'
+        ],
+
+        features: [
+            'Real-time Investment Calculations',
+            'Angular Signals for Reactive State Management',
+            'Currency Formatting using Angular Currency Pipe',
+            'Annual Investment Growth Breakdown',
+            'Dynamic Form Validation',
+            'Responsive User Interface',
+            'Standalone Component Architecture',
+            'Financial Data Presentation'
         ]
     }
 

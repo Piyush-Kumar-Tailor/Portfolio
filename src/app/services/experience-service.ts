@@ -5,5 +5,5 @@ import { EXPERIENCES } from '../dto';
   providedIn: 'root',
 })
 export class ExperienceService {
-  experieces = EXPERIENCES;
+  readonly experieces = EXPERIENCES;
 }

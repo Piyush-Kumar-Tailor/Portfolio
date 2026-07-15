@@ -5,5 +5,5 @@ import { ALLPROJECT } from '../dto';
   providedIn: 'root',
 })
 export class ProjectService {
-  projects  = ALLPROJECT;
+  readonly projects  = ALLPROJECT;
 }
