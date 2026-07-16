@@ -1,0 +1,71 @@
+<!-- =========================
+        Success Alert
+========================= -->
+
+@if(successMessage()){
+
+<div
+    class="mb-6 flex items-start gap-4 rounded-2xl border border-green-500/20 bg-green-500/10 p-4 shadow-lg shadow-green-500/5">
+
+    <div
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500/20">
+
+        <i class="fa-solid fa-circle-check text-lg text-green-400"></i>
+
+    </div>
+
+    <div class="min-w-0 flex-1">
+
+        <h4 class="font-semibold text-green-400">
+
+            Success
+
+        </h4>
+
+        <p class="mt-1 break-words text-sm leading-6 text-green-300">
+
+            {{ successMessage() }}
+
+        </p>
+
+    </div>
+
+</div>
+
+}
+
+<!-- =========================
+        Error Alert
+========================= -->
+
+@if(errorMessage()){
+
+<div
+    class="mb-6 flex items-start gap-4 rounded-2xl border border-red-500/20 bg-red-500/10 p-4 shadow-lg shadow-red-500/5">
+
+    <div
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-500/20">
+
+        <i class="fa-solid fa-circle-xmark text-lg text-red-400"></i>
+
+    </div>
+
+    <div class="min-w-0 flex-1">
+
+        <h4 class="font-semibold text-red-400">
+
+            Error
+
+        </h4>
+
+        <p class="mt-1 break-words text-sm leading-6 text-red-300">
+
+            {{ errorMessage() }}
+
+        </p>
+
+    </div>
+
+</div>
+
+}

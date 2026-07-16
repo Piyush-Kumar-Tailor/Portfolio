@@ -1,0 +1,15 @@
+<div
+    class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:p-10">
+
+    <app-contact-alerts-component
+        [successMessage]="successMessage()"
+        [errorMessage]="errorMessage()">
+    </app-contact-alerts-component>
+
+    <app-contact-form-fields-component
+        [form]="contactForm"
+        [isSending]="isSending()"
+        (submitForm)="sendEmail()">
+    </app-contact-form-fields-component>
+
+</div>
