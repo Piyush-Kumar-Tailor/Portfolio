@@ -1,1 +1,5 @@
 export * from './project-card-component'
+export * from './project-card-details-component'
+export * from './project-card-preview-component'
+export * from './project-card-actions-component'
+export * from './project-card-actions-component'

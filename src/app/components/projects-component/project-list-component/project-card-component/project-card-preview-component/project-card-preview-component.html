@@ -1,0 +1,58 @@
+<div
+    class="relative overflow-hidden rounded-t-3xl"
+    (mouseenter)="playVideo()"
+    (mouseleave)="pauseVideo()">
+
+    <video
+        #videoPlayer
+        class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+        muted
+        playsinline
+        preload="metadata"
+        (click)="toggleVideo()">
+
+        <source
+            [src]="project().video"
+            type="video/mp4">
+
+    </video>
+
+    <div
+        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent">
+    </div>
+
+    <!-- Play Button -->
+
+    <div
+        class="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+        [class.opacity-0]="isPlaying"
+        [class.opacity-100]="!isPlaying">
+
+        <div
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-black/50 backdrop-blur-md">
+
+            <i class="fa-solid fa-play text-lg text-white"></i>
+
+        </div>
+
+    </div>
+
+    <!-- Status -->
+
+    <div class="absolute right-3 top-3">
+
+        <span
+            class="rounded-full border px-2 py-1 text-[10px] font-semibold"
+            [class]="
+            project().status === 'Completed'
+            ? 'border-green-500/40 bg-green-500/20 text-green-400'
+            : 'border-yellow-500/40 bg-yellow-500/20 text-yellow-400'
+            ">
+
+            {{ project().status }}
+
+        </span>
+
+    </div>
+
+</div>

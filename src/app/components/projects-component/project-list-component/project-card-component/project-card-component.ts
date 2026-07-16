@@ -1,72 +1,25 @@
-import { Component, input,ViewChild , ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input } from '@angular/core';
+
 import { Project } from '../../../../dto';
 
+import { ProjectCardPreviewComponent} from './project-card-preview-component';
+import { ProjectCardDetailsComponent } from './project-card-details-component';
+import { ProjectCardActionsComponent } from './project-card-actions-component';
+import { ProjectCardSkeletonComponent } from './project-card-skeleton-component';
 
 @Component({
-
   selector: 'app-project-card',
-
   standalone: true,
-
-  imports: [],
-
-  templateUrl: './project-card-component.html',
-
-  styleUrl: './project-card-component.css'
-
+  imports: [
+    ProjectCardPreviewComponent,
+    ProjectCardDetailsComponent,
+    ProjectCardActionsComponent,
+    ProjectCardSkeletonComponent,
+],
+  templateUrl: './project-card-component.html'
 })
-
 export class ProjectCardComponent {
 
-  project = input.required<Project>();
-
-  @ViewChild('videoPlayer')
-
-  videoPlayer!: ElementRef<HTMLVideoElement>;
-
-  isPlaying = false;
-
-  playVideo(): void {
-
-    const video = this.videoPlayer.nativeElement;
-
-    video.play();
-
-    this.isPlaying = true;
-
-  }
-
-  pauseVideo(): void {
-
-    const video = this.videoPlayer.nativeElement;
-
-    video.pause();
-
-    video.currentTime = 0;
-
-    this.isPlaying = false;
-
-  }
-
-  toggleVideo(): void {
-
-    const video = this.videoPlayer.nativeElement;
-
-    if (video.paused) {
-
-      video.play();
-
-      this.isPlaying = true;
-
-    } else {
-
-      video.pause();
-
-      this.isPlaying = false;
-
-    }
-
-  }
+  readonly project = input<Project>();
 
 }
