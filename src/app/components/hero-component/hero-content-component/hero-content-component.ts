@@ -19,6 +19,6 @@ export class HeroContentComponent {
     'mailto:piyushkumar89b2@gmail.com';
 
   readonly resume =
-    'assets/resume/Piyush_Kumar_Tailor_Resume.pdf';
+    'resume/Piyush_Kumar_Tailor_Resume.pdf';
 
 }
