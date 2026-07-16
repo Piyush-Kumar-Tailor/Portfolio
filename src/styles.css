@@ -1,11 +1,57 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-
 
 @import "tailwindcss";
 
-/*   SCROLLBAR
+/* ==========================================
+   Base Styles
+========================================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   Responsive Media
+========================================== */
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   Form Controls
+========================================== */
+
+/* Prevent iOS Safari auto-zoom */
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  font-size: 16px;
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -16,12 +62,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
   background: linear-gradient(
     180deg,
     #3b82f6,
     #06b6d4
   );
-  border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -32,10 +78,27 @@
   );
 }
 
-//Firefox 
+/* Firefox */
 
 * {
   scrollbar-width: thin;
   scrollbar-color: #3b82f6 #020617;
 }
- */
+
+/* ==========================================
+   Selection
+========================================== */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ==========================================
+   Focus Accessibility
+========================================== */
+
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
