@@ -1,179 +1,219 @@
 <header
-  class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 shadow-lg shadow-black/10 backdrop-blur-xl">
 
-  <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+    <nav
+        class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-    <!-- Logo -->
+                <!-- Logo -->
 
-    <a href="#home"
-      class="text-2xl text-blue-800 font-bold tracking-wide transition duration-300 hover:text-blue-400">
+        <a
+            href="#home"
+            class="text-xl font-bold tracking-wide text-white transition duration-300 hover:text-blue-400 sm:text-2xl">
 
-      Piyush<span class="text-blue-500">.</span>
+            Piyush<span class="text-blue-500">.</span>
 
-    </a>
-
-    <!-- Desktop Menu -->
-
-    <ul class="hidden items-center gap-8 font-medium text-slate-300 lg:flex">
-
-      <li>
-        <a href="#home"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Home
         </a>
-      </li>
 
-      <li>
-        <a href="#about"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          About
-        </a>
-      </li>
+            <!-- Desktop Navigation -->
 
-      <li>
-        <a href="#skills"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Skills
-        </a>
-      </li>
+        <ul
+            class="hidden items-center gap-5 text-sm font-medium text-slate-300 xl:gap-7 lg:flex">
 
-      <li>
-        <a href="#experience"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Experience
-        </a>
-      </li>
+            <li>
+                <a href="#home"
+                    class="transition duration-300 hover:text-blue-400">
 
-      <li>
-        <a href="#projects"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Projects
-        </a>
-      </li>
+                    Home
 
-      <li>
-        <a href="#education"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Education
-        </a>
-      </li>
+                </a>
+            </li>
 
-      <li>
-        <a href="#contact"
-          class="transition duration-300 hover:text-blue-400 hover:underline underline-offset-8">
-          Contact
-        </a>
-      </li>
+            <li>
+                <a href="#about"
+                    class="transition duration-300 hover:text-blue-400">
 
-    </ul>
+                    About
 
-    <!-- Resume Button -->
+                </a>
+            </li>
 
-    <div class="hidden lg:block">
+            <li>
+                <a href="#skills"
+                    class="transition duration-300 hover:text-blue-400">
 
-      <a href="resume/Piyush_Kumar_Tailor_Resume.pdf"
-        download
-        class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/40">
+                    Skills
 
-        Resume
+                </a>
+            </li>
 
-      </a>
+            <li>
+                <a href="#experience"
+                    class="transition duration-300 hover:text-blue-400">
+
+                    Experience
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects"
+                    class="transition duration-300 hover:text-blue-400">
+
+                    Projects
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#education"
+                    class="transition duration-300 hover:text-blue-400">
+
+                    Education
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact"
+                    class="transition duration-300 hover:text-blue-400">
+
+                    Contact
+
+                </a>
+            </li>
+
+        </ul>
+
+                <!-- Resume Button -->
+
+        <div class="hidden lg:block">
+
+            <a
+                href="resume/Piyush_Kumar_Tailor_Resume.pdf"
+                download
+                class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30">
+
+                <i class="fa-solid fa-download"></i>
+
+                Resume
+
+            </a>
+
+        </div>
+
+            <!-- Mobile Menu Button -->
+
+        <button
+            type="button"
+            (click)="toggleMenu()"
+            class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 text-white transition-all duration-300 hover:border-blue-500 hover:bg-slate-800 lg:hidden">
+
+            @if(!menuOpen()){
+
+            <i class="fa-solid fa-bars text-xl"></i>
+
+            }@else{
+
+            <i class="fa-solid fa-xmark text-xl"></i>
+
+            }
+
+        </button>
+
+    </nav>
+
+            <!-- Mobile Menu -->
+
+    @if(menuOpen()){
+
+    <div
+        class="border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl lg:hidden">
+
+        <div
+            class="mx-4 my-4 rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-2xl">
+
+            <div class="flex flex-col gap-2">
+
+                <a
+                    href="#home"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Home
+
+                </a>
+
+                <a
+                    href="#about"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    About
+
+                </a>
+
+                <a
+                    href="#skills"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Skills
+
+                </a>
+
+                <a
+                    href="#experience"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Experience
+
+                </a>
+
+                <a
+                    href="#projects"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Projects
+
+                </a>
+
+                <a
+                    href="#education"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Education
+
+                </a>
+
+                <a
+                    href="#contact"
+                    (click)="closeMenu()"
+                    class="rounded-xl px-4 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-800 hover:text-blue-400">
+
+                    Contact
+
+                </a>
+
+                <a
+                    href="resume/Piyush_Kumar_Tailor_Resume.pdf"
+                    download
+                    class="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download Resume
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <!-- Mobile Button -->
-
-    <button
-      (click)="toggleMenu()"
-      class="rounded-lg border border-slate-700 p-2 text-white transition hover:bg-slate-800 lg:hidden">
-
-      @if (!menuOpen()) {
-
-      <svg xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-
-      </svg>
-
-      } @else {
-
-      <svg xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12" />
-
-      </svg>
-
-      }
-
-    </button>
-
-  </nav>
-
-  <!-- Mobile Menu -->
-
-  @if(menuOpen()) {
-
-  <div
-    class="border-t border-slate-800 bg-slate-950 px-6 py-6 lg:hidden">
-
-    <div class="flex flex-col gap-6 text-lg text-slate-300">
-
-      <a href="#home" (click)="closeMenu()" class="hover:text-blue-400">
-        Home
-      </a>
-
-      <a href="#about" (click)="closeMenu()" class="hover:text-blue-400">
-        About
-      </a>
-
-      <a href="#skills" (click)="closeMenu()" class="hover:text-blue-400">
-        Skills
-      </a>
-
-      <a href="#experience" (click)="closeMenu()" class="hover:text-blue-400">
-        Experience
-      </a>
-
-      <a href="#projects" (click)="closeMenu()" class="hover:text-blue-400">
-        Projects
-      </a>
-
-      <a href="#education" (click)="closeMenu()" class="hover:text-blue-400">
-        Education
-      </a>
-
-      <a href="#contact" (click)="closeMenu()" class="hover:text-blue-400">
-        Contact
-      </a>
-
-      <a href="assets/resume.pdf"
-        download
-        class="mt-2 rounded-lg bg-blue-600 py-3 text-center font-semibold text-white">
-
-        Download Resume
-
-      </a>
-
-    </div>
-
-  </div>
-
-  }
+    }
 
 </header>
