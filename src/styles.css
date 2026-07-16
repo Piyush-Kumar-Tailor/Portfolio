@@ -5,37 +5,3 @@
 
 @import "tailwindcss";
 
-  SCROLLBAR
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #020617;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    #3b82f6,
-    #06b6d4
-  );
-  border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    #2563eb,
-    #0891b2
-  );
-}
-
-/* Firefox  */
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3b82f6 #020617;
-}
-
