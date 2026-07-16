@@ -235,12 +235,23 @@
 
                         </div>
 
-                        @if(contactForm.get('name')?.invalid &&
-                        contactForm.get('name')?.touched){
+                        @if(contactForm.get('name')?.touched){
+
+                        @if(contactForm.get('name')?.hasError('required')){
 
                         <p class="mt-2 text-sm text-red-400">
                             Name is required.
                         </p>
+
+                        }
+
+                        @if(contactForm.get('name')?.hasError('minlength')){
+
+                        <p class="mt-2 text-sm text-red-400">
+                            Name must be at least 3 characters.
+                        </p>
+
+                        }
 
                         }
 

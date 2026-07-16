@@ -1,13 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
-  FormBuilder,
-  FormGroup,
+  NonNullableFormBuilder,
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
 
 import emailjs from '@emailjs/browser';
-import { environment } from '../../environments'; // Adjust the path if needed
+import { environment } from '../../environments';
 
 @Component({
   selector: 'app-contact-component',
@@ -18,41 +17,59 @@ import { environment } from '../../environments'; // Adjust the path if needed
 })
 export class ContactComponent {
 
-  contactForm: FormGroup;
+  private readonly fb = inject(NonNullableFormBuilder);
 
-  isSending = signal(false);
+  readonly emailJs = environment.emailJs;
 
-  successMessage = signal('');
+  readonly isSending = signal(false);
 
-  errorMessage = signal('');
+  readonly successMessage = signal('');
 
-  // EmailJS Configuration
-  emailJs = environment.emailJs;
+  readonly errorMessage = signal('');
 
-  constructor(private fb: FormBuilder) {
+  readonly contactForm = this.fb.group({
 
-    this.contactForm = this.fb.group({
+    name: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(50)
+      ]
+    ],
 
-      name: ['', Validators.required],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.email
+      ]
+    ],
 
-      email: ['', [Validators.required, Validators.email]],
+    subject: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(100)
+      ]
+    ],
 
-      subject: ['', Validators.required],
+    message: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(1000)
+      ]
+    ]
 
-      message: ['', Validators.required]
-
-    });
-
-  }
+  });
 
   sendEmail(): void {
 
-    // Prevent multiple clicks
-    if (this.isSending()) {
-      return;
-    }
+    if (this.isSending()) return;
 
-    // Validate form
     if (this.contactForm.invalid) {
 
       this.contactForm.markAllAsTouched();
@@ -61,12 +78,11 @@ export class ContactComponent {
 
     }
 
-    // Clear previous messages
     this.successMessage.set('');
     this.errorMessage.set('');
-
-    // Show loading
     this.isSending.set(true);
+
+    const form = this.contactForm.getRawValue();
 
     emailjs.send(
 
@@ -76,13 +92,13 @@ export class ContactComponent {
 
       {
 
-        from_name: this.contactForm.value.name,
+        from_name: form.name.trim(),
 
-        from_email: this.contactForm.value.email,
+        from_email: form.email.trim(),
 
-        subject: this.contactForm.value.subject,
+        subject: form.subject.trim(),
 
-        message: this.contactForm.value.message
+        message: form.message.trim()
 
       },
 
@@ -90,41 +106,31 @@ export class ContactComponent {
 
     )
 
-    .then(() => {
+      .then(() => {
 
-      this.successMessage.set(
-        '✅ Thank you! Your message has been sent successfully.'
-      );
+        this.successMessage.set(
+          '✅ Thank you! Your message has been sent successfully.'
+        );
 
-      this.contactForm.reset({
+        this.contactForm.reset();
 
-        name: '',
+      })
 
-        email: '',
+      .catch((error: unknown) => {
 
-        subject: '',
+        console.error('EmailJS Error:', error);
 
-        message: ''
+        this.errorMessage.set(
+          '❌ Failed to send your message. Please try again.'
+        );
+
+      })
+
+      .finally(() => {
+
+        this.isSending.set(false);
 
       });
-
-    })
-
-    .catch((error) => {
-
-      console.error(error);
-
-      this.errorMessage.set(
-        '❌ Unable to send your message. Please try again later.'
-      );
-
-    })
-
-    .finally(() => {
-
-      this.isSending.set(false);
-
-    });
 
   }
 
