@@ -28,7 +28,7 @@ export const ALLPROJECT: Project[] = [
 
         video: '/videos/EMS.mp4',
 
-        github: 'https://github.com/Piyush-Kumar-Tailor/EMPLOYEE-MANAGEMENT-SYSTEM',
+        github: '',
 
         demo: '',
 
