@@ -21,6 +21,52 @@ export interface Project {
 export const ALLPROJECT: Project[] = [
 
     {
+        title: 'Smart Notes Summarizer',
+
+        description:
+            'An AI-powered PDF Summarization and Study Assistant built with Angular, Spring Boot, PostgreSQL, and Gemini AI. The application allows users to upload PDF documents and automatically generates concise summaries, key points, flashcards, interactive quizzes, and interview questions. It also provides secure authentication, OTP verification, history management, export functionality, and the ability to generate fresh quiz questions for repeated practice.',
+
+        video: '/videos/SNS.mp4',
+
+        github: 'https://github.com/Piyush-Kumar-Tailor/Smart-Notes-Summarizer',
+
+        demo: 'https://notessummarizer.vercel.app/',
+
+        status: 'Completed',
+
+        techStack: [
+            'Angular',
+            'TypeScript',
+            'Tailwind CSS',
+            'Java',
+            'Spring Boot',
+            'REST APIs',
+            'PostgreSQL',
+            'Gemini AI',
+            'Spring Security',
+            'JWT',
+            'Brevo Email API'
+        ],
+
+        features: [
+            'Secure User Registration and Authentication',
+            'Email OTP Verification',
+            'JWT-Based Authentication',
+            'PDF Upload and Processing',
+            'AI-Generated PDF Summaries',
+            'Important Key Point Extraction',
+            'AI-Generated Flashcards',
+            'Interactive Multiple-Choice Quizzes',
+            'Generate New Quiz with Fresh Questions',
+            'AI-Generated Interview Questions',
+            'Summary History Management',
+            'PDF, Markdown and Text Export',
+            'Protected User-Specific Data',
+            'Responsive Mobile-Friendly Interface'
+        ]
+    },
+
+    {
         title: 'Employee Management System',
 
         description:
@@ -215,5 +261,7 @@ export const ALLPROJECT: Project[] = [
             'Financial Data Presentation'
         ]
     }
+
+
 
 ];
