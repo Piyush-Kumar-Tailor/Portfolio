@@ -107,7 +107,7 @@ export const EXPERIENCES: Experience[] = [
 
     company: 'GRRAS Solutions Pvt. Ltd., Jaipur',
 
-    duration: 'Jun 2025 – Aug 2026',
+    duration: 'Jun 2025 – Sep 2025',
 
     icon: 'fa-solid fa-brain',
 
