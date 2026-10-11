@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HeroProfileComponent {
 
-  readonly profileImage = 'images/Piyush.jpg';
+  readonly profileImage = 'images/Piyush.png';
 
   readonly technologies = [
     {
